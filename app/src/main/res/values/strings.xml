@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">drop</string>
+    <string name="emails">Email address</string>
+    <string name="forgot">Forgot</string>
+    <string name="forgot2">Password?</string>
+    <string name="f">Forgot Password?</string>
+    <string name="text3">Enter your Email address to proceed</string>
+    <string name="verify">Verify</string>
+    <string name="login">Login</string>
+    <string name="text1">Please enter your login details to sign in</string>
+    <string name="password">Password</string>
+    <string name="button">Log in</string>
+    <string name="user">New user?</string>
+    <string name="sign">Sign up</string>
+    <string name="google">Login with Google</string>
+</resources>
