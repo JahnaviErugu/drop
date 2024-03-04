@@ -11,17 +11,15 @@
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15sp"
         android:text="@string/login"
         android:textColor="#EF233C"
-        android:textSize="41sp"
+        android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.096" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="32dp" />
 
     <TextView
         android:id="@+id/text1"
@@ -97,19 +95,18 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="320dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:background="@drawable/button"
         android:text="@string/button"
         android:textColor="@color/white"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@+id/forgot1"
-        app:layout_constraintVertical_bias="0.117" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintWidth_percent="0.8" />
 
     <TextView
         android:id="@+id/user"
@@ -153,8 +150,8 @@
     </RelativeLayout>
 
     <ImageView
-        android:id="@+id/icon1"
-        android:layout_width="65dp"
+        android:id="@+id/icon_google"
+        android:layout_width="wrap_content"
         android:layout_height="58dp"
         android:contentDescription="@string/google"
         android:padding="8dp"
@@ -162,15 +159,17 @@
         android:paddingEnd="2dp"
         android:paddingBottom="105dp"
         android:src="@drawable/img"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.465"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button"
         app:layout_constraintVertical_bias="0.976" />
 
     <TextView
-        android:id="@+id/google"
+        android:id="@+id/text_google"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="13sp"
@@ -179,6 +178,8 @@
         android:text="@string/google"
         android:textColor="#000000"
         android:textSize="20sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/icon_google"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
