@@ -13,4 +13,23 @@
     <string name="user">New user?</string>
     <string name="sign">Sign up</string>
     <string name="google">Login with Google</string>
+    <string name="details">Request details</string>
+    <string name="name">Selena Gomez</string>
+    <string name="time"> Posted 1 hr ago</string>
+    <string name="location"> Chennai</string>
+    <string name="blood">Blood Group Request</string>
+    <string name="bg">O+ve</string>
+    <string name="units">Required units</string>
+    <string name="u">2 units</string>
+    <string name="hosp">Hospital Name</string>
+    <string name="hospname">Rainy Hospital, Chennai</string>
+    <string name="desc">Request Description</string>
+    <string name="description">My friend Ankita faced a severe accident today morning at OMR road and she’s lost a lot of blood. Doctors advised us to collect blood units immediately which will help my friend to recover soon. If anything to contact me regarding this, call me @ 9383469321. Please do the needful!!</string>
+    <string name="contact">Contact Details</string>
+    <string name="number">+91 9383469321</string>
+    <string name="bt">Donate Blood</string>
+    <string name="congod">We’ll notify your donation response!
+        Meanwhile reach out to the hospital to donate your blood</string>
+    <string name="donid">Donation ID : AB2567FQ</string>
+    <string name="bt2">Back to home</string>
 </resources>

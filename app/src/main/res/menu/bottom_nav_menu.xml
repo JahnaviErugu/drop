@@ -6,7 +6,7 @@
             android:icon="@drawable/home"/>
         <item
             android:id="@+id/drop"
-            android:title="Drop"
+            android:title="Feed"
             android:icon="@drawable/blood_drop"/>
         <item
             android:id="@+id/profile"

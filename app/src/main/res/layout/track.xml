@@ -60,7 +60,7 @@
                       android:layout_height="wrap_content" />
 
                   <TextView
-                      android:id="@+id/time"
+                      android:id="@+id/location"
                       android:textColor="#4B4B4B"
                       android:layout_marginLeft="3dp"
                       android:drawableStart="@drawable/time"
