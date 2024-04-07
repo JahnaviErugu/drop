@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:layout_height="300dp"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="251dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="5dp"
+        android:text="Request posted successfully!"
+        android:textColor="#EF233C"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="100dp"
+        android:layout_height="49dp"
+        android:text="Done"
+        android:layout_marginStart="5dp"
+        android:textColor="#FFFFFF"
+        android:onClick="showCustomDialog"
+        android:background="@drawable/button"
+        android:layout_marginTop="30dp" />
+
+</LinearLayout>

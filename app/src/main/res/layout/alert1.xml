@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:layout_height="300dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="251dp"
+        android:layout_height="103dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="5dp"
+        android:text="Check your inbox!"
+        android:textColor="#EF233C"
+        android:textSize="41sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/messageTextView"
+        android:layout_width="174dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:text="To reset your password"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="106dp"
+        android:layout_height="49dp"
+        android:text="Login"
+        android:onClick="showCustomDialog"
+        android:layout_marginStart="5dp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>

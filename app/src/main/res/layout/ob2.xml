@@ -1,6 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/white">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    tools:context=".ob2">
+
+    <ImageView
+        android:id="@+id/obImage2"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/ob2"
+        app:layout_constraintBottom_toBottomOf="@+id/ob2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/ob2"
+        android:layout_width="325dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="152dp"
+        android:textSize="30sp"
+        android:textColor="#393939"
+        android:text="The gift of Blood is the gift of Life"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/obImage2" />
+
+    <TextView
+        android:id="@+id/skip2"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="344dp"
+        android:layout_marginBottom="31dp"
+        android:text="Skip"
+        android:paddingTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:onClick="skip2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ob2" />
+
+    <ImageView
+        android:id="@+id/f2"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="340dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="29dp"
+        android:background="@drawable/obbg"
+        android:contentDescription="Goes Forward"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="f2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ob2"
+        app:srcCompat="@drawable/baseline_arrow_forward_24" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

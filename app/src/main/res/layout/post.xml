@@ -7,225 +7,183 @@
     android:elevation="5dp"
     android:orientation="vertical"
     tools:context=".post">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/bhome"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="3dp"
+                    android:onClick="backhome"
+                    android:contentDescription="Goes backward"
+                    android:drawableStart="@drawable/baseline_arrow_back_24"/>
+
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="40dp"
+                    android:text="Post a Request"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp" />
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="  Post a Request"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_margin="20dp"
-                android:drawableStart="@drawable/baseline_arrow_back_24"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="48dp"
                 android:layout_margin="20dp"
                 android:text="Patient Name"
-                android:textSize="20dp"/>
+                android:textSize="20sp"/>
 
             <EditText
                 android:id="@+id/username_editText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="320dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp"
-                android:background="@color/cardview_light_background"
-                android:elevation="10dp"
+                android:background="@drawable/edittext_bg"
                 android:ems="10"
                 android:hint="Enter Patient Name"
-                android:inputType="text"
-                android:paddingLeft="18sp"
-                android:textColorHint="@color/design_default_color_background"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.244" />
+                android:autofillHints="Patient Name"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:textColorHint="#6F6F6F"
+                android:textSize="16sp" />
+
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="48dp"
                 android:layout_margin="20dp"
-                android:text="Mobile number"
-                android:textSize="20dp"/>
+                android:text="Mobile Number"
+                android:textSize="20sp"/>
 
             <EditText
                 android:id="@+id/username_editText2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="320dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp"
-                android:background="@color/cardview_light_background"
-                android:elevation="10dp"
+                android:background="@drawable/edittext_bg"
                 android:ems="10"
-                android:hint="Enter mobile number"
-                android:inputType="text"
-                android:paddingLeft="18sp"
-                android:textColorHint="@color/design_default_color_background"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.244" />
+                android:hint="Enter Mobile Number"
+                android:autofillHints="Mobile Number"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:textColorHint="#6F6F6F"
+                android:textSize="16sp" />
+
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="48dp"
                 android:layout_margin="20dp"
                 android:text="Hospital Name"
-                android:textSize="20dp"/>
+                android:textSize="20sp"/>
 
             <EditText
                 android:id="@+id/username_editText3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="320dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp"
-                android:background="@color/cardview_light_background"
-                android:elevation="10dp"
+                android:background="@drawable/edittext_bg"
                 android:ems="10"
-                android:hint="Enter Hospital Name and Location"
-                android:inputType="text"
-                android:paddingLeft="18sp"
-                android:textColorHint="@color/design_default_color_background"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.244" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="20dp"
-                android:text="Status"
-                android:textSize="20dp"/>
-            <EditText
-                android:id="@+id/status"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="25dp"
-                android:layout_marginEnd="25dp"
-                android:background="@color/cardview_light_background"
-                android:elevation="10dp"
-                android:ems="10"
-                android:hint="Status"
-                android:inputType="text"
-                android:paddingLeft="18sp"
-                android:textColorHint="@color/design_default_color_background"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.244" />
-
+                android:hint="Enter Hospital name &amp; Location"
+                android:autofillHints="Hospital Name"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:textColorHint="#6F6F6F"
+                android:textSize="16sp"/>
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="48dp"
                 android:layout_margin="20dp"
-                android:text="Blood group needed"
-                android:textSize="20dp"/>
+                android:text="Blood Group Needed"
+                android:textSize="20sp"/>
 
-            <EditText
-                android:id="@+id/username_editText4"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <Spinner
+                android:id="@+id/blood_group_spinner"
+                android:layout_width="320dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp"
-                android:background="@color/cardview_light_background"
-                android:elevation="10dp"
-                android:ems="10"
-                android:hint="Eg:O+ve"
-                android:inputType="text"
-                android:paddingLeft="18sp"
-                android:textColorHint="@color/design_default_color_background"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.244" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="20dp"
-                android:text="Units required"
-                android:textSize="20dp"/>
+                android:background="@drawable/edittext_bg"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:textColorHint="#6F6F6F"
+                android:textSize="16sp" />
 
-            <EditText
-                android:id="@+id/username_editText5"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="25dp"
-                android:layout_marginEnd="25dp"
-                android:background="@color/cardview_light_background"
-                android:elevation="10dp"
-                android:ems="10"
-                android:hint="Eg:1u"
-                android:inputType="text"
-                android:paddingLeft="18sp"
-                android:textColorHint="@color/design_default_color_background"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.244" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="Units Required"
+                    android:textSize="20sp"/>
+
+                <NumberPicker
+                    android:id="@+id/unitspicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp" />
+
+            </LinearLayout>
+
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="48dp"
                 android:layout_margin="20dp"
-                android:text="Purpose/Additional comments(optional)"
-                android:textSize="15dp"/>
+                android:text="Purpose/Additional Comments (Optional)"
+                android:textSize="15sp"/>
 
             <EditText
                 android:id="@+id/username_editText6"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp"
-                android:background="@color/cardview_light_background"
-                android:elevation="10dp"
+                android:background="@drawable/edittext_bg"
                 android:ems="10"
-                android:hint="Enter the purpose of Request"
-                android:inputType="textMultiLine"
-                android:lines="6"
-                android:paddingLeft="18sp"
-                android:textColorHint="@color/design_default_color_background"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.244" />
+                android:maxLines="5"
+                android:hint="Enter the purpose of request"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:textColorHint="#6F6F6F"
+                android:textSize="16sp" />
+
             <Button
+                android:id="@+id/buttons"
                 android:layout_width="356dp"
                 android:layout_height="61dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/btn_bg"
                 android:text="Post"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:textSize="22sp"
-                android:layout_gravity="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.454"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text1"
-                app:layout_constraintVertical_bias="0.117" />
-        </LinearLayout>
-    </ScrollView>
+                android:onClick="postdialog"
+                android:layout_gravity="center" />
 
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

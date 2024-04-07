@@ -12,7 +12,8 @@
     <string name="button">Log in</string>
     <string name="user">New user?</string>
     <string name="sign">Sign up</string>
-    <string name="google">Login with Google</string>
+    <string name="google">Login with</string>
+    <string name="g">Google</string>
     <string name="details">Request details</string>
     <string name="name">Selena Gomez</string>
     <string name="time"> Posted 1 hr ago</string>
@@ -32,4 +33,69 @@
         Meanwhile reach out to the hospital to donate your blood</string>
     <string name="donid">Donation ID : AB2567FQ</string>
     <string name="bt2">Back to home</string>
+    <string-array name="username">
+        <item>Sophia</item>
+        <item>David John</item>
+        <item>Karthik N M</item>
+        <item>Selena Gomez</item>
+    </string-array>
+    <string-array name="Address">
+        <item>Rainy Hospital, chennai</item>
+        <item>Apollo Hospital, chennai</item>
+        <item>Apollo Hospital, chennai</item>
+        <item>Rainy Hospital, chennai</item>
+    </string-array>
+    <string-array name="time">
+        <item>Posted an hour ago</item>
+        <item>Posted 1 hrs ago</item>
+        <item>Posted 2 hrs ago</item>
+        <item>Posted an hour ago</item>
+    </string-array>
+    <string-array name="units">
+        <item>Required : 2 units</item>
+        <item>Required : 1 units</item>
+        <item>Required : 1 units</item>
+        <item>Required : 2 units</item>
+    </string-array>
+    <string-array name="Bloodgroup">
+        <item>O+ve</item>
+        <item>0-ve</item>
+        <item>B+ve</item>
+        <item>O+ve</item>
+    </string-array>
+    <string-array name="name">
+        <item>Sophia</item>
+        <item>David John</item>
+        <item>Selena Gomez</item>
+    </string-array>
+    <string-array name="location">
+        <item>Rainy Hospital, chennai</item>
+        <item>Apollo Hospital, chennai</item>
+        <item>Rainy Hospital, chennai</item>
+    </string-array>
+    <string-array name="timing">
+        <item>Requested on 2/3/2023</item>
+        <item>Requested on 2/5/2023</item>
+        <item>Requested on 5/6/2023</item>
+    </string-array>
+    <string-array name="unitsgiven">
+        <item>Requested 2 units</item>
+        <item>Requested 1 units</item>
+        <item>Requested 1 units</item>
+    </string-array>
+    <string-array name="bg">
+        <item>O+ve</item>
+        <item>0-ve</item>
+        <item>B+ve</item>
+    </string-array>
+    <string-array name="blood_groups">
+        <item>O+</item>
+        <item>O-</item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+    </string-array>
 </resources>

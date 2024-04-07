@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/white">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    tools:context=".ob3">
+
+    <ImageView
+        android:id="@+id/obImage3"
+        android:layout_width="240dp"
+        android:layout_height="236.84dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/ob3"
+        app:layout_constraintBottom_toBottomOf="@+id/ob3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ob3"
+        android:layout_width="199dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="-100dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="152dp"
+        android:textSize="30sp"
+        android:textColor="#393939"
+        android:text="Be a hero, Donate blood"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/obImage3" />
+
+    <TextView
+        android:id="@+id/enter"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="29dp"
+        android:background="@drawable/ob3bg"
+        android:text="Get Started"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:paddingTop="10dp"
+        android:paddingStart="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="f3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ob3" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

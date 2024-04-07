@@ -7,7 +7,7 @@
 
     <TextView
         android:id="@+id/forgot"
-        android:layout_width="match_parent"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20sp"
         android:layout_marginTop="100sp"
@@ -24,7 +24,7 @@
 
     <TextView
         android:id="@+id/forgot2"
-        android:layout_width="match_parent"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20sp"
         android:layout_marginTop="237sp"
@@ -42,44 +42,52 @@
 
     <TextView
         android:id="@+id/text3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="20sp"
+        android:layout_width="273dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="-40dp"
+        android:layout_marginTop="-120dp"
+        android:layout_marginBottom="28dp"
         android:text="@string/text3"
         android:textColor="#000000"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/emails"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.363"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/forgot2"/>
+        app:layout_constraintTop_toBottomOf="@+id/forgot2" />
 
     <EditText
         android:id="@+id/emails"
-        android:layout_width="367dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="-10dp"
+        android:layout_marginTop="-40dp"
+        android:layout_marginBottom="10dp"
+        android:autofillHints="emailAddress"
         android:background="@drawable/edittext_bg"
         android:ems="10"
-        android:autofillHints="emailAddress"
         android:hint="@string/emails"
         android:inputType="textEmailAddress"
         android:paddingLeft="18sp"
         android:paddingRight="18sp"
         android:textColorHint="#EA9696"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/verify"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.363"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text3"/>
+        app:layout_constraintTop_toBottomOf="@+id/text3" />
 
     <Button
         android:id="@+id/verify"
-        android:layout_width="320dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="370dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="-20dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/button"
+        android:onClick="verify"
         android:text="@string/verify"
         android:textColor="@color/white"
         android:textSize="22sp"
@@ -88,5 +96,5 @@
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emails"
-        app:layout_constraintVertical_bias="0.117"/>
+        app:layout_constraintVertical_bias="0.117" />
 </androidx.constraintlayout.widget.ConstraintLayout>
