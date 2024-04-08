@@ -1,16 +1,17 @@
 package com.rcrit.drop;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 public class donation1 extends AppCompatActivity {
+
     private TextView mBackTextView;
     private TextView mNameTextView;
     private TextView mTimeTextView;
@@ -27,6 +28,7 @@ public class donation1 extends AppCompatActivity {
     private Button mDonateButton;
     private ImageView mProfileImageView;
     private CardView mCardView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,11 +51,18 @@ public class donation1 extends AppCompatActivity {
         mContactTextView.setText(getString(R.string.contact));
         mNumberTextView.setText(getString(R.string.number));
 
+        // Set click listener for donate button
+        mDonateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Show confirmation dialog before proceeding with donation
+                showConfirmationDialog();
+            }
+        });
+
         // Set the image for the profile
-        mProfileImageView.setImageDrawable(getResources().getDrawable(R.drawable.pro));
+        mProfileImageView.setImageResource(R.drawable.pro);
     }
-
-
 
     private void initializeViews() {
         mBackTextView = findViewById(R.id.back);
@@ -74,8 +83,28 @@ public class donation1 extends AppCompatActivity {
         mCardView = findViewById(R.id.cardView);
     }
 
-    public void donateBlood(View view) {
+    private void showConfirmationDialog() {
+        // Implement your custom confirmation dialog here
+        // For example:
+        // AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        // builder.setMessage("Are you sure you want to donate?");
+        // builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        //     @Override
+        //     public void onClick(DialogInterface dialogInterface, int i) {
+        //         // Proceed with donation
+        //         donateBlood();
+        //     }
+        // });
+        // builder.setNegativeButton("No", null);
+        // builder.show();
 
+        // For simplicity, directly call donateBlood() without a confirmation dialog
+        donateBlood();
+    }
+
+    private void donateBlood() {
+        // Add logic to handle the donation process
+        // For example, update UI to reflect donation status and navigate to donation2 activity
         Intent intent = new Intent(this, donation2.class);
         startActivity(intent);
     }

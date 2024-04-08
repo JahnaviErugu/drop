@@ -1,17 +1,18 @@
 package com.rcrit.drop;
+
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 public class track extends AppCompatActivity {
+
     private TextView mBackHomeButton;
     private ImageView mProfileImageView;
     private TextView mNameTextView;
@@ -23,6 +24,9 @@ public class track extends AppCompatActivity {
     private TextView mProgressTextView;
     private ImageView mCancelButton;
 
+    private int mTotalUnitsNeeded = 100; // Total units needed for the request
+    private int mCurrentUnitsProgress = 50; // Current units collected
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,9 +34,8 @@ public class track extends AppCompatActivity {
         initializeViews();
 
         mBackHomeButton.setOnClickListener(view -> startActivity(new Intent(this, homeadapter.class)));
-
-
     }
+
     private void initializeViews() {
         mBackHomeButton = findViewById(R.id.backhome);
         mProfileImageView = findViewById(R.id.prof);
@@ -44,43 +47,44 @@ public class track extends AppCompatActivity {
         mProgressBar = findViewById(R.id.progressBar);
         mProgressTextView = findViewById(R.id.textViewProgress);
         mCancelButton = findViewById(R.id.imageViewCancel);
-        mProfileImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.pro));
 
-        // Set your desired text for the views
+        mProfileImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.pro));
         mNameTextView.setText("Sophia");
         mLocationTextView.setText("Rainy Hospital, Chennai");
-        mPostedTextView.setText("2 units");
-        mUnitsTextView.setText("Required: 2 units");
+        mPostedTextView.setText("Posted 2 units");
+        mUnitsTextView.setText("Required: " + mTotalUnitsNeeded + " units");
         mBloodGroupTextView.setText("O+");
 
-        // Set progress to an initial value, e.g., 50%
-        mProgressBar.setProgress(50);
-        mProgressTextView.setText("50 U / 100 U");
+        // Update progress bar and progress text
+        updateProgress();
 
         // Set a click listener for the cancel button
         mCancelButton.setOnClickListener(view -> cancelRequest());
     }
+
+    private void updateProgress() {
+        // Calculate progress percentage
+        int progressPercentage = (int) (((float) mCurrentUnitsProgress / mTotalUnitsNeeded) * 100);
+
+        // Update progress bar and progress text
+        mProgressBar.setProgress(progressPercentage);
+        mProgressTextView.setText(mCurrentUnitsProgress + " U / " + mTotalUnitsNeeded + " U");
+    }
+
     private void cancelRequest() {
-        // Add the implementation for canceling the request
+        // Add logic to handle request cancellation (e.g., call API to cancel request)
+
+        // Simulate request cancellation by resetting progress
+        mCurrentUnitsProgress = 0;
+        updateProgress();
 
         // Run the UI update task on the main thread
-        runOnUiThread(updateUIRunnable);
-    }
-    Runnable updateUIRunnable = new Runnable() {
-        @Override
-        public void run() {
-            // Update the UI to reflect the cancellation of the request.
-            // For example, you can disable the progress bar, hide the cancel button,
-            // or show a message indicating that the request was canceled.
-
-            // Disable the progress bar
-            mProgressBar.setEnabled(false);
-
+        runOnUiThread(() -> {
             // Hide the cancel button
             mCancelButton.setVisibility(View.GONE);
 
-            // Show a message
+            // Show a message indicating that the request was canceled
             Toast.makeText(track.this, "Request canceled", Toast.LENGTH_SHORT).show();
-        }
-    };
+        });
+    }
 }

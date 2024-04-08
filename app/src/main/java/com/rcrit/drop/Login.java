@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 
 public class Login extends AppCompatActivity {
 
@@ -35,12 +37,23 @@ public class Login extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle login button click
-                Intent intent = new Intent(Login.this, homeadapter.class);
-                startActivity(intent);
+                String enteredEmail = Email.getText().toString().trim();
+                String enteredPassword = password.getText().toString().trim();
 
+                // Perform validation (e.g., check against hardcoded values for demonstration)
+                if (enteredEmail.equals("test@example.com") && enteredPassword.equals("password123")) {
+                    // Authentication successful, navigate to homeadapter activity
+                    Intent intent = new Intent(Login.this, homeadapter.class);
+                    startActivity(intent);
+                } else if (enteredEmail.isEmpty() || enteredPassword.isEmpty()) {
+                    Toast.makeText(Login.this, "Please enter email and password", Toast.LENGTH_SHORT).show();
+                } else {
+                    // Authentication failed, show error message or handle accordingly
+                    Toast.makeText(Login.this, "Invalid email or password", Toast.LENGTH_SHORT).show();
+                }
             }
         });
+
 
         forgotTextView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -2,6 +2,7 @@ package com.rcrit.drop;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -9,28 +10,30 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class post extends AppCompatActivity {
-    private Button postbutton;
-    private EditText patientname, mobilenumber, hospname, purpose;
-    private TextView Backhome;
-    private Spinner bloodgroupspinner;
+
+    private Button postButton;
+    private EditText patientNameEditText, mobileNumberEditText, hospitalNameEditText, purposeEditText;
+    private Spinner bloodGroupSpinner;
     private NumberPicker unitsPicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.post);
-        postbutton = findViewById(R.id.buttons);
-        bloodgroupspinner = findViewById(R.id.blood_group_spinner);
+
+        // Initialize views
+        postButton = findViewById(R.id.buttons);
+        bloodGroupSpinner = findViewById(R.id.blood_group_spinner);
         unitsPicker = findViewById(R.id.unitspicker);
-        Backhome = findViewById(R.id.bhome);
-        patientname = findViewById(R.id.username_editText);
-        mobilenumber = findViewById(R.id.username_editText2);
-        hospname = findViewById(R.id.username_editText3);
-        purpose = findViewById(R.id.username_editText6);
+        patientNameEditText = findViewById(R.id.username_editText);
+        mobileNumberEditText = findViewById(R.id.username_editText2);
+        hospitalNameEditText = findViewById(R.id.username_editText3);
+        purposeEditText = findViewById(R.id.username_editText6);
 
         // Set the range for the number picker
         unitsPicker.setMinValue(1);
@@ -38,26 +41,43 @@ public class post extends AppCompatActivity {
 
         // Add items to the blood group spinner
         String[] bloodGroups = {"A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"};
-        Spinner bloodGroupSpinner = findViewById(R.id.blood_group_spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, bloodGroups);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         bloodGroupSpinner.setAdapter(adapter);
 
-        postbutton.setOnClickListener(new View.OnClickListener() {
+        // Handle post button click
+        postButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String patientName = ((EditText) findViewById(R.id.username_editText)).getText().toString();
-                String mobileNumber = ((EditText) findViewById(R.id.username_editText2)).getText().toString();
-                String hospitalName = ((EditText) findViewById(R.id.username_editText3)).getText().toString();
-                String bloodGroup = bloodgroupspinner.getSelectedItem().toString();
+                // Retrieve input values
+                String patientName = patientNameEditText.getText().toString().trim();
+                String mobileNumber = mobileNumberEditText.getText().toString().trim();
+                String hospitalName = hospitalNameEditText.getText().toString().trim();
+                String bloodGroup = bloodGroupSpinner.getSelectedItem().toString();
                 int unitsRequired = unitsPicker.getValue();
-                String purpose = ((EditText) findViewById(R.id.username_editText6)).getText().toString();
+                String purpose = purposeEditText.getText().toString().trim();
 
-                // TODO: Send the request data to the server
+                // Validate input fields
+                if (isValidInput(patientName, mobileNumber, hospitalName, purpose)) {
+                    // TODO: Send the request data to the server
 
-                Intent intent = new Intent(post.this, alert2.class);
-                startActivity(intent);
+                    // Show success message and navigate to next activity
+                    Toast.makeText(post.this, "Request posted successfully", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(post.this, alert2.class);
+                    startActivity(intent);
+                } else {
+                    // Display error message for invalid input
+                    Toast.makeText(post.this, "Please fill in all required fields", Toast.LENGTH_SHORT).show();
+                }
             }
         });
+    }
+
+    private boolean isValidInput(String patientName, String mobileNumber, String hospitalName, String purpose) {
+        // Validate input fields
+        return !TextUtils.isEmpty(patientName)
+                && !TextUtils.isEmpty(mobileNumber)
+                && !TextUtils.isEmpty(hospitalName)
+                && !TextUtils.isEmpty(purpose);
     }
 }
