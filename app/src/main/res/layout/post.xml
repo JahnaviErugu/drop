@@ -114,6 +114,10 @@
                 android:layout_margin="20dp"
                 android:text="Blood Group Needed"
                 android:textSize="20sp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <Spinner
                 android:id="@+id/blood_group_spinner"
@@ -126,28 +130,55 @@
                 android:paddingEnd="18dp"
                 android:textColorHint="#6F6F6F"
                 android:textSize="16sp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="20dp">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="24dp"
+                android:src="@drawable/baseline_arrow_forward_ios_24"
+                android:layout_marginStart="-60dp"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
+                    android:layout_margin="20dp"
                     android:layout_gravity="center_vertical"
                     android:text="Units Required"
                     android:textSize="20sp"/>
-
-                <NumberPicker
-                    android:id="@+id/unitspicker"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="10dp" />
+                    android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/username_editText5"
+                    android:layout_width="320dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/edittext_bg"
+                    android:ems="10"
+                    android:hint="Eg:1,2"
+                    android:autofillHints="Hospital Name"
+                    android:paddingStart="130dp"
+                    android:paddingEnd="18dp"
+                    android:textColorHint="#6F6F6F"
+                    android:textSize="16sp"/>
+                    <ImageView
+                        android:id="@+id/add"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_add_24"
+                        android:layout_marginStart="-330dp"
+                        android:layout_marginTop="10dp"/>
+                    <ImageView
+                        android:id="@+id/remove"
+                        android:layout_width="17dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/remove"
+                        android:layout_marginStart="230dp"
+                        android:layout_marginTop="10dp"/>
+                </LinearLayout>
 
-            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -159,7 +190,7 @@
             <EditText
                 android:id="@+id/username_editText6"
                 android:layout_width="320dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp"
                 android:background="@drawable/edittext_bg"
@@ -171,12 +202,13 @@
                 android:textColorHint="#6F6F6F"
                 android:textSize="16sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttons"
                 android:layout_width="356dp"
                 android:layout_height="61dp"
                 android:layout_marginTop="20dp"
                 android:text="Post"
+                android:background="@drawable/button"
                 android:textColor="@android:color/white"
                 android:textSize="22sp"
                 android:onClick="postdialog"

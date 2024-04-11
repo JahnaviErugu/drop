@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.NumberPicker;
 import android.widget.TextView;
@@ -17,9 +18,10 @@ import androidx.appcompat.app.AppCompatActivity;
 public class post extends AppCompatActivity {
 
     private Button postButton;
-    private EditText patientNameEditText, mobileNumberEditText, hospitalNameEditText, purposeEditText;
+    private EditText patientNameEditText, mobileNumberEditText, hospitalNameEditText, purposeEditText, unitsEditText;
     private Spinner bloodGroupSpinner;
-    private NumberPicker unitsPicker;
+    private ImageView add, remove;
+    int number = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,21 +31,22 @@ public class post extends AppCompatActivity {
         // Initialize views
         postButton = findViewById(R.id.buttons);
         bloodGroupSpinner = findViewById(R.id.blood_group_spinner);
-        unitsPicker = findViewById(R.id.unitspicker);
         patientNameEditText = findViewById(R.id.username_editText);
         mobileNumberEditText = findViewById(R.id.username_editText2);
         hospitalNameEditText = findViewById(R.id.username_editText3);
         purposeEditText = findViewById(R.id.username_editText6);
-
-        // Set the range for the number picker
-        unitsPicker.setMinValue(1);
-        unitsPicker.setMaxValue(10);
+        unitsEditText = findViewById(R.id.username_editText5);
+        add = findViewById(R.id.add);
+        remove = findViewById(R.id.remove);
 
         // Add items to the blood group spinner
         String[] bloodGroups = {"A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, bloodGroups);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         bloodGroupSpinner.setAdapter(adapter);
+
+        // Set up units functionality
+        setUnitsEditText(unitsEditText);
 
         // Handle post button click
         postButton.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +57,6 @@ public class post extends AppCompatActivity {
                 String mobileNumber = mobileNumberEditText.getText().toString().trim();
                 String hospitalName = hospitalNameEditText.getText().toString().trim();
                 String bloodGroup = bloodGroupSpinner.getSelectedItem().toString();
-                int unitsRequired = unitsPicker.getValue();
                 String purpose = purposeEditText.getText().toString().trim();
 
                 // Validate input fields
@@ -73,6 +75,31 @@ public class post extends AppCompatActivity {
         });
     }
 
+    private void setUnitsEditText(final EditText unitsEditText) {
+        // Initialize number of units and set initial value
+        unitsEditText.setText(String.valueOf(number));
+
+        // Handle add button click
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                number++;
+                unitsEditText.setText(String.valueOf(number));
+            }
+        });
+
+        // Handle remove button click
+        remove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (number > 1) {
+                    number--;
+                    unitsEditText.setText(String.valueOf(number));
+                }
+            }
+        });
+    }
+
     private boolean isValidInput(String patientName, String mobileNumber, String hospitalName, String purpose) {
         // Validate input fields
         return !TextUtils.isEmpty(patientName)
@@ -80,4 +107,5 @@ public class post extends AppCompatActivity {
                 && !TextUtils.isEmpty(hospitalName)
                 && !TextUtils.isEmpty(purpose);
     }
+
 }

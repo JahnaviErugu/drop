@@ -1,43 +1,44 @@
 package com.rcrit.drop;
 
 public class dataclass {
-    private String name;
-    private String location;
-    private String bloodType;
-    private int unitsRequired;
-    private int profile;
-    private String time;
+    String name;
+    String address;
+    String time;
+    String units;
+    String bloodgroup;
+    int profile;
 
-    public dataclass(String name, String location, String bloodType, int unitsRequired, int profile, String time) {
+
+    public dataclass(String name, String address, String time, String units, String bloodgroup, int profile) {
         this.name = name;
-        this.location = location;
-        this.bloodType = bloodType;
-        this.unitsRequired = unitsRequired;
-        this.profile = profile;
+        this.address = address;
         this.time = time;
+        this.units = units;
+        this.bloodgroup = bloodgroup;
+        this.profile = profile;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getLocation() {
-        return location;
-    }
-
-    public String getBloodType() {
-        return bloodType;
-    }
-
-    public int getUnitsRequired() {
-        return unitsRequired;
-    }
-
-    public int getProfile() {
-        return profile;
+    public String getAddress() {
+        return address;
     }
 
     public String getTime() {
         return time;
+    }
+
+    public String getUnits() {
+        return units;
+    }
+
+    public String getBloodgroup() {
+        return bloodgroup;
+    }
+
+    public int getProfile() {
+        return profile;
     }
 }

@@ -39,6 +39,12 @@
         <activity android:name=".requestmodel"/>
         <activity android:name=".RecycleViewAdapter"/>
         <activity android:name=".homeadapter"/>
+        <activity android:name=".Postedrequests"/>
+        <activity android:name=".Postedrecycleviewadapter"/>
+        <activity android:name=".dataclass"/>
+        <activity android:name=".hist1"/>
+        <activity android:name=".hist1adapter"/>
+        <activity android:name=".hist1model"/>
     </application>
 
 </manifest>

@@ -34,12 +34,12 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         if (requestmodels != null && position < requestmodels.size()) {
             holder.name.setText(requestmodels.get(position).getName());
-            holder.loc.setText(requestmodels.get(position).getTime());
-            holder.location.setText(requestmodels.get(position).getAddress());
+            holder.loc.setText(requestmodels.get(position).getAddress());
+            holder.location.setText(requestmodels.get(position).getTime());
             holder.units.setText(requestmodels.get(position).getUnits());
-            holder.bg.setText(requestmodels.get(position).getBloodgroup());
+            holder.Bg.setText(requestmodels.get(position).getBloodgroup());
             holder.prof.setImageResource(requestmodels.get(position).getProfile());
-            holder.mDonateButton.setOnClickListener(new View.OnClickListener() {
+            holder.buttons.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(context, donation1.class);
@@ -56,8 +56,8 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         ImageView prof;
-        TextView name,loc,location,units,bg;
-        Button mDonateButton;
+        TextView name,loc,location,units,Bg;
+        Button buttons;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -65,9 +65,9 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
             name =  itemView.findViewById(R.id.name);
             loc =  itemView.findViewById(R.id.loc);
             location =  itemView.findViewById(R.id.location);
-            mDonateButton = itemView.findViewById(R.id.buttons);
+            buttons = itemView.findViewById(R.id.buttons);
             units =  itemView.findViewById(R.id.units);
-            bg =  itemView.findViewById(R.id.bg);
+            Bg =  itemView.findViewById(R.id.Bg);
         }
     }
 }

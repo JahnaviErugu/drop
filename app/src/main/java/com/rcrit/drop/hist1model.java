@@ -21,7 +21,7 @@ public class hist1model {
         return name;
     }
 
-    public String g() {
+    public String getAddress() {
         return address;
     }
 

@@ -28,7 +28,7 @@
                     android:layout_centerInParent="true">
 
                     <ImageView
-                        android:id="@+id/prof"
+                        android:id="@+id/profileee"
                         android:src="@drawable/pro"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
@@ -42,13 +42,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:id="@+id/nameee"
                         android:text=" Sophia"
                         android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:id="@+id/loc"
+                        android:id="@+id/address"
                         android:drawableStart="@drawable/loc"
                         android:text="Rainy Hospital, Chennai"
                         android:textColor="#4B4B4B"
@@ -56,7 +57,7 @@
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:id="@+id/location"
+                        android:id="@+id/timeee"
                         android:textColor="#4B4B4B"
                         android:layout_marginLeft="3dp"
                         android:drawableStart="@drawable/time"
@@ -69,6 +70,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/unitt"
                             android:drawableStart="@drawable/unit"
                             android:layout_marginLeft="2dp"
                             android:text="  Requested 2 units "
@@ -94,7 +96,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:id="@+id/Bg"
+                    android:id="@+id/Bloodgroup"
                     android:text=" O+"
                     android:drawableTop="@drawable/baseline_bloodtype_24"/>
             </LinearLayout>

@@ -11,7 +11,7 @@
         android:id="@+id/sign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="-235dp"
+        android:layout_marginStart="-240dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="8dp"
         android:text="Sign up"
@@ -28,8 +28,8 @@
         android:id="@+id/create"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="-20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="-25dp"
         android:text="Create your account"
         android:textColor="#000000"
         android:textSize="16sp"
@@ -121,7 +121,7 @@
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintVertical_bias="0.06" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
         android:layout_width="370dp"
         android:layout_height="60dp"
@@ -172,8 +172,8 @@
         android:id="@+id/text_sgoogle"
         android:layout_width="320dp"
         android:layout_height="52dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="41dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="35dp"
         android:layout_marginBottom="40dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"

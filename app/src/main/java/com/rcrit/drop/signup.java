@@ -70,15 +70,7 @@ public class signup extends AppCompatActivity {
             }
         });
 
-        // Set click listener for Google sign-up text (if applicable)
-        googleTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Handle Google sign-up click
-                Toast.makeText(signup.this, "Google Sign-Up clicked", Toast.LENGTH_SHORT).show();
-                // Implement Google Sign-In logic here
-            }
-        });
+
     }
 
     // Method to validate email format
