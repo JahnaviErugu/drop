@@ -10,8 +10,8 @@ import java.util.ArrayList;
 
 public class hist2 extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private hist1adapter adapter;
-    private ArrayList<hist1model> hist1models;
+    private hist2adapter adapter;
+    private ArrayList<hist2model> hist2models;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,18 +19,18 @@ public class hist2 extends AppCompatActivity {
         setContentView(R.layout.hist2);
 
         // Initialize RecyclerView
-        recyclerView = findViewById(R.id.recyclee);
+        recyclerView = findViewById(R.id.recycles);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Initialize data for RecyclerView
-        hist1models = new ArrayList<>();
-        hist1models.add(new hist1model("Selena Gomez", "Rainy Hospital, Chennai", "Requested on 2/3/2023", "Requested 2 units", "O+", R.drawable.pro));
-        hist1models.add(new hist1model("David John Abraham", "Apollo Hospital, Chennai", "Requested on 2/3/2023", "Requested 2 units", "O-", R.drawable.pro2));
-        hist1models.add(new hist1model("Selena Gomez", "Rainy Hospital, Chennai", "Requested on 2/3/2023", "Requested 2 units", "O+", R.drawable.pro));
+        hist2models = new ArrayList<>();
+        hist2models.add(new hist2model("Selena Gomez", "Rainy Hospital, Chennai", "Donated on 2/3/2023", "Donated 2 units", "O+", R.drawable.pro));
+        hist2models.add(new hist2model("David John Abraham", "Apollo Hospital, Chennai", "Donated on 2/3/2023", "Donated 2 units", "O-", R.drawable.pro2));
+        hist2models.add(new hist2model("Selena Gomez", "Rainy Hospital, Chennai", "Donated on 2/3/2023", "Donated 2 units", "O+", R.drawable.pro));
 
 
         // Set up RecyclerView adapter
-        adapter = new hist1adapter(this, hist1models);
+        adapter = new hist2adapter(this,hist2models);
         recyclerView.setAdapter(adapter);
     }
 }

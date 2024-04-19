@@ -1,104 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".hist1adapter"
+    android:layout_height="wrap_content">
+
     <LinearLayout
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="629dp"
         android:orientation="vertical"
-        android:padding="30dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
-            android:orientation="horizontal"
-            android:layout_marginTop="30px"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_centerInParent="true">
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="20dp">
 
                     <ImageView
                         android:id="@+id/profileee"
-                        android:src="@drawable/pro"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:scaleType="centerCrop" />
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pro" />
                 </androidx.cardview.widget.CardView>
 
                 <LinearLayout
-                    android:layout_margin="5dp"
-                    android:padding="5dp"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
                     <TextView
                         android:id="@+id/nameee"
-                        android:text=" Sophia"
-                        android:textColor="@color/black"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:text=" Sophia"
+                        android:textColor="@color/black" />
 
                     <TextView
                         android:id="@+id/address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:drawableStart="@drawable/loc"
                         android:text="Rainy Hospital, Chennai"
-                        android:textColor="#4B4B4B"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:textColor="#4B4B4B" />
 
                     <TextView
                         android:id="@+id/timeee"
-                        android:textColor="#4B4B4B"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:drawableStart="@drawable/time"
                         android:text="  Posted on 2/3/2023"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:textColor="#4B4B4B" />
 
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
                         <TextView
                             android:id="@+id/unitt"
-                            android:drawableStart="@drawable/unit"
-                            android:layout_marginLeft="2dp"
-                            android:text="  Requested 2 units "
-                            android:textColor="#4B4B4B"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:drawableStart="@drawable/unit"
+                            android:text="  Requested 2 units "
+                            android:textColor="#4B4B4B" />
 
                     </LinearLayout>
                 </LinearLayout>
 
             </LinearLayout>
+
             <LinearLayout
-                android:layout_alignParentEnd="true"
+                android:id="@+id/icons"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="10dp"
-                android:id="@+id/icons"
-                android:gravity="right">
+                android:gravity="right"
+                android:orientation="horizontal">
 
 
                 <TextView
+                    android:id="@+id/Bloodgroup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:id="@+id/Bloodgroup"
-                    android:text=" O+"
-                    android:drawableTop="@drawable/baseline_bloodtype_24"/>
+                    android:drawableTop="@drawable/baseline_bloodtype_24"
+                    android:text=" O+" />
             </LinearLayout>
 
         </RelativeLayout>

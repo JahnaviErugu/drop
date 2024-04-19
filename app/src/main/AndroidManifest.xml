@@ -30,7 +30,8 @@
         <activity android:name=".signup"/>
         <activity android:name=".alert1"
             android:theme="@style/Theme.AppCompat.Dialog"/>
-        <activity android:name=".alert2"/>
+        <activity android:name=".alert2"
+            android:theme="@style/Theme.AppCompat.Dialog"/>
         <activity android:name=".profile"/>
         <activity android:name=".track"/>
         <activity android:name=".post"/>

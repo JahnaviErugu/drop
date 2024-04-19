@@ -44,9 +44,7 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:drawablePadding">20dp</item>
     </style>
-    <style name="viewParent.headerText.settingsTextIcon" parent="settingsText">
-        <item name="android:drawableRight">@drawable/ic_more</item>
-    </style>
+
     <style name="roundedImageViewRounded">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>

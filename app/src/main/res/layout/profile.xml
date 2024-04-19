@@ -8,91 +8,223 @@ android:layout_height="match_parent">
 
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="30dp">
+        android:padding="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             style="@style/viewParent.headerText"
             android:text="Profile" />
 
         <RelativeLayout
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/profileCircleImageView"
-                app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
-                app:strokeWidth="1dp"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/user"
                 android:layout_marginTop="15dp"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginRight="10dp"
+                android:src="@drawable/user"
+                app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+                app:strokeWidth="1dp" />
 
             <TextView
                 android:id="@+id/usernameTextView"
                 style="@style/viewParent.headerText"
-                android:text="Godson P"
-                android:textSize="18sp"
+                android:layout_marginTop="20dp"
                 android:layout_toRightOf="@id/profileCircleImageView"
-                android:layout_marginTop="20dp"/>
+                android:text="Godson P"
+                android:textSize="18sp" />
 
             <TextView
                 style="@style/viewParent.headerText"
-                android:text="Blood group: B+ve"
-                android:textSize="16sp"
-                android:textColor="#5D5C5C"
                 android:layout_below="@id/usernameTextView"
-                android:layout_toRightOf="@id/profileCircleImageView"/>
+                android:layout_toRightOf="@id/profileCircleImageView"
+                android:text="Blood group: B+ve"
+                android:textColor="#5D5C5C"
+                android:textSize="16sp" />
 
             <ImageView
                 style="@style/viewParent"
-                android:src="@drawable/ic_more"
                 android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"/>
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_more" />
 
         </RelativeLayout>
 
-
-        <TextView
-            style="@style/viewParent.headerText.settingsTextIcon"
-            android:drawableLeft="@drawable/baseline_key_24"
-            android:text="Account" />
-        <TextView
-            style="@style/viewParent.headerText.settingsTextIcon"
-            android:drawableLeft="@drawable/baseline_location_on_24"
-            android:text="Location" />
-        <TextView
-            style="@style/viewParent.headerText.settingsTextIcon"
-            android:drawableLeft="@drawable/baseline_settings_24"
-            android:text="Settings" />
-        <TextView
-            style="@style/viewParent.headerText.settingsTextIcon"
-            android:drawableLeft="@drawable/baseline_live_help_24"
-            android:text="Help" />
-        <TextView
-            style="@style/viewParent.headerText.settingsTextIcon"
-            android:drawableLeft="@drawable/add_friend"
-            android:text="Invite a Friend" />
-        <TextView
-            style="@style/viewParent.headerText.settingsMiniTitle"
-            android:text="App ver 2.0.1"
-            android:textAlignment="center"/>
-
-
     </LinearLayout>
-    <FrameLayout
-        android:id="@+id/flFragment"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+
+    <ImageView
+        android:id ="@+id/key"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="230dp"
+        android:layout_marginEnd="300dp"
+        android:layout_marginBottom="480dp"
+        android:src="@drawable/baseline_key_24"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/Account"
+        android:layout_width="69dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="228dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginBottom="480dp"
+        android:text="Account"
+        android:textColor="#252525"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id ="@+id/location"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="300dp"
+        android:layout_marginBottom="390dp"
+        android:src="@drawable/baseline_location_on_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/locationTextView"
+        android:layout_width="69dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="235dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginBottom="380dp"
+        android:text="Location"
+        android:textColor="#252525"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id ="@+id/settings"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginEnd="300dp"
+        android:layout_marginBottom="270dp"
+        android:src="@drawable/baseline_settings_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/settingsTextview"
+        android:layout_width="69dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="238dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginBottom="272dp"
+        android:text="Settings"
+        android:textColor="#252525"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id ="@+id/help"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="300dp"
+        android:layout_marginBottom="120dp"
+        android:src="@drawable/baseline_live_help_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/helptextview"
+        android:layout_width="69dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="228dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginBottom="150dp"
+        android:text="Help"
+        android:textColor="#252525"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id ="@+id/invite"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="230dp"
+        android:layout_marginEnd="300dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/add_friend"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/invitetextview"
+        android:layout_width="107dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="228dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginBottom="40dp"
+        android:text="Invite a Friend"
+        android:textColor="#252525"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/Appversion"
+        android:layout_width="107dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="518dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginBottom="10dp"
+        android:text="App Version 1.0"
+        android:textColor="#252525"
+        android:textSize="13sp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+   
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"

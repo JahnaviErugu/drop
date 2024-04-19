@@ -1,13 +1,17 @@
 package com.rcrit.drop;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.view.View;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import java.util.ArrayList;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
 
@@ -16,6 +20,7 @@ public class homeadapter extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RecycleViewAdapter adapter;
+
     private ArrayList<requestmodel> requestModels;
 
     @Override
@@ -57,6 +62,28 @@ public class homeadapter extends AppCompatActivity {
                 // For example, navigate to a new activity to track requests
                 Intent intent = new Intent(homeadapter.this, track.class);
                 startActivity(intent);
+            }
+        });
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.home) {
+                    // Code to perform on home item click
+                    return true;
+                } if (item.getItemId() == R.id.drop) {
+                    // Code to perform on profile item click
+                    startActivity(new Intent(getApplicationContext(), track.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                } if (item.getItemId() == R.id.profile) {
+                        // Code to perform on message item click
+                        startActivity(new Intent(getApplicationContext(), profile.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                }
+                return false;
             }
         });
     }

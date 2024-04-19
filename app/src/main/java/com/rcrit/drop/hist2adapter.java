@@ -1,4 +1,5 @@
 package com.rcrit.drop;
+
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -13,36 +14,37 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class hist1adapter extends RecyclerView.Adapter<hist1adapter.MyViewHolder>{
+public class hist2adapter extends RecyclerView.Adapter<hist2adapter.MyViewHolder> {
     Context context;
-    ArrayList<hist1model> hist1models;
-    public hist1adapter(Context context,ArrayList<hist1model>hist1models){
+    ArrayList<hist2model> hist2models;
+    public hist2adapter(Context context, ArrayList<hist2model>hist2models){
         this.context = context;
-        this.hist1models = hist1models;
+        this.hist2models = hist2models;
     }
+
     @NonNull
     @Override
-    public hist1adapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
+    public hist2adapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.histrecycle, parent, false);
-        return new MyViewHolder(view);
-    }
-    @Override
-    public void onBindViewHolder(@NonNull hist1adapter.MyViewHolder holder, int position) {
-        holder.name.setText(hist1models.get(position).getName());
-        holder.loc.setText(hist1models.get(position).getAddress());
-        holder.time.setText(hist1models.get(position).getTime());
-        holder.units.setText(hist1models.get(position).getUnits());
-        holder.Bg.setText(hist1models.get(position).getBloodgroup());
-        holder.prof.setImageResource(hist1models.get(position).getProfile());
+        View view = inflater.inflate(R.layout.donaterecycle,parent,false);
+        return new hist2adapter.MyViewHolder(view);
 
     }
 
     @Override
-    public int getItemCount(){
-        return hist1models.size();
+    public void onBindViewHolder(@NonNull hist2adapter.MyViewHolder holder, int position) {
+        holder.name.setText(hist2models.get(position).getName());
+        holder.loc.setText(hist2models.get(position).getAddress());
+        holder.time.setText(hist2models.get(position).getTime());
+        holder.units.setText(hist2models.get(position).getUnits());
+        holder.Bg.setText(hist2models.get(position).getBloodgroup());
+        holder.prof.setImageResource(hist2models.get(position).getProfile());
     }
 
+    @Override
+    public int getItemCount() {
+        return hist2models.size();
+    }
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         ImageView prof;
         TextView name,loc,time,units,Bg;
@@ -58,4 +60,3 @@ public class hist1adapter extends RecyclerView.Adapter<hist1adapter.MyViewHolder
         }
     }
 }
-

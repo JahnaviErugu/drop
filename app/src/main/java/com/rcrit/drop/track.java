@@ -3,10 +3,13 @@ package com.rcrit.drop;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.MenuItem;
+import androidx.annotation.NonNull;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -32,6 +35,28 @@ public class track extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.track);
         initializeViews();
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.drop);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.drop) {
+                    // Code to perform on home item click
+                    return true;
+                } if (item.getItemId() == R.id.home) {
+                    // Code to perform on profile item click
+                    startActivity(new Intent(getApplicationContext(), homeadapter.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                } if (item.getItemId() == R.id.profile) {
+                    // Code to perform on message item click
+                    startActivity(new Intent(getApplicationContext(), profile.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                }
+                return false;
+            }
+        });
 
         mBackHomeButton.setOnClickListener(view -> startActivity(new Intent(this, homeadapter.class)));
     }
