@@ -27,7 +27,7 @@ public class hist2adapter extends RecyclerView.Adapter<hist2adapter.MyViewHolder
     public hist2adapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.donaterecycle,parent,false);
-        return new hist2adapter.MyViewHolder(view);
+        return new MyViewHolder(view);
 
     }
 

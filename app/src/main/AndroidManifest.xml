@@ -46,6 +46,9 @@
         <activity android:name=".hist1"/>
         <activity android:name=".hist1adapter"/>
         <activity android:name=".hist1model"/>
+        <activity android:name=".hist2"/>
+        <activity android:name="hist2model"/>
+        <activity android:name=".hist2adapter"/>
     </application>
 
 </manifest>

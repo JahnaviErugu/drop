@@ -13,4 +13,6 @@
     <color name="contentTextColor">#020000</color>
     <color name="imageBorderColor">#E01E7A</color>
     <color name="miniTitle">#2A2E43</color>
+    <color name="default_icon_color">#808080</color>
+    <color name="highlighted_icon_color">#EF233C</color>
 </resources>

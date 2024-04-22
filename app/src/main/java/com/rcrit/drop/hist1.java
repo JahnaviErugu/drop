@@ -1,7 +1,12 @@
 package com.rcrit.drop;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,6 +15,8 @@ import java.util.ArrayList;
 public class hist1 extends AppCompatActivity {
     private RecyclerView recyclerView;
     private hist1adapter adapter;
+
+    private TextView donationhist;
     private ArrayList<hist1model> hist1models;
 
     @Override
@@ -19,6 +26,16 @@ public class hist1 extends AppCompatActivity {
 
         // Initialize RecyclerView
         recyclerView = findViewById(R.id.recycle);
+        donationhist = findViewById(R.id.hist2);
+        donationhist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle forgot password click
+                Intent intent = new Intent(hist1.this, hist2.class);
+                startActivity(intent);
+
+            }
+        });
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Initialize data for RecyclerView
