@@ -58,13 +58,13 @@ public class Postedrecycleviewadapter extends RecyclerView.Adapter<Postedrecycle
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            prof =  itemView.findViewById(R.id.profilee);
-            name =  itemView.findViewById(R.id.namee);
-            loc =  itemView.findViewById(R.id.locationn);
-            time =  itemView.findViewById(R.id.timee);
-            buttons = itemView.findViewById(R.id.buttonss);
-            units =  itemView.findViewById(R.id.unitss);
-            Bg =  itemView.findViewById(R.id.bloodgroup);
+            prof =  itemView.findViewById(R.id.prof);
+            name =  itemView.findViewById(R.id.name);
+            loc =  itemView.findViewById(R.id.loc);
+            time =  itemView.findViewById(R.id.location);
+            buttons = itemView.findViewById(R.id.buttons);
+            units =  itemView.findViewById(R.id.units);
+            Bg =  itemView.findViewById(R.id.Bg);
         }
     }
 }

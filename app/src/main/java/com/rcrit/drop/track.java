@@ -27,8 +27,8 @@ public class track extends AppCompatActivity {
     private TextView mProgressTextView;
     private ImageView mCancelButton;
 
-    private int mTotalUnitsNeeded = 100; // Total units needed for the request
-    private int mCurrentUnitsProgress = 50; // Current units collected
+    private int mTotalUnitsNeeded = 100;
+    private int mCurrentUnitsProgress = 50;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,20 +36,20 @@ public class track extends AppCompatActivity {
         setContentView(R.layout.track);
         initializeViews();
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.drop);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.drop) {
-                    // Code to perform on home item click
+                    startActivity(new Intent(getApplicationContext(), Postedrequests.class));
+                    overridePendingTransition(0, 0);
                     return true;
                 } if (item.getItemId() == R.id.home) {
-                    // Code to perform on profile item click
+
                     startActivity(new Intent(getApplicationContext(), homeadapter.class));
                     overridePendingTransition(0, 0);
                     return true;
                 } if (item.getItemId() == R.id.profile) {
-                    // Code to perform on message item click
+
                     startActivity(new Intent(getApplicationContext(), profile.class));
                     overridePendingTransition(0, 0);
                     return true;
@@ -80,35 +80,33 @@ public class track extends AppCompatActivity {
         mUnitsTextView.setText("Required: " + mTotalUnitsNeeded + " units");
         mBloodGroupTextView.setText("O+");
 
-        // Update progress bar and progress text
+
         updateProgress();
 
-        // Set a click listener for the cancel button
+
         mCancelButton.setOnClickListener(view -> cancelRequest());
     }
 
     private void updateProgress() {
-        // Calculate progress percentage
+
         int progressPercentage = (int) (((float) mCurrentUnitsProgress / mTotalUnitsNeeded) * 100);
 
-        // Update progress bar and progress text
+
         mProgressBar.setProgress(progressPercentage);
         mProgressTextView.setText(mCurrentUnitsProgress + " U / " + mTotalUnitsNeeded + " U");
     }
 
     private void cancelRequest() {
-        // Add logic to handle request cancellation (e.g., call API to cancel request)
 
-        // Simulate request cancellation by resetting progress
         mCurrentUnitsProgress = 0;
         updateProgress();
 
-        // Run the UI update task on the main thread
+
         runOnUiThread(() -> {
-            // Hide the cancel button
+
             mCancelButton.setVisibility(View.GONE);
 
-            // Show a message indicating that the request was canceled
+
             Toast.makeText(track.this, "Request canceled", Toast.LENGTH_SHORT).show();
         });
     }

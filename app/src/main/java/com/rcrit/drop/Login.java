@@ -40,15 +40,15 @@ public class Login extends AppCompatActivity {
                 String enteredEmail = Email.getText().toString().trim();
                 String enteredPassword = password.getText().toString().trim();
 
-                // Perform validation (e.g., check against hardcoded values for demonstration)
+
                 if (enteredEmail.equals("test@example.com") && enteredPassword.equals("password123")) {
-                    // Authentication successful, navigate to homeadapter activity
+
                     Intent intent = new Intent(Login.this, homeadapter.class);
                     startActivity(intent);
                 } else if (enteredEmail.isEmpty() || enteredPassword.isEmpty()) {
                     Toast.makeText(Login.this, "Please enter email and password", Toast.LENGTH_SHORT).show();
                 } else {
-                    // Authentication failed, show error message or handle accordingly
+
                     Toast.makeText(Login.this, "Invalid email or password", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -58,7 +58,7 @@ public class Login extends AppCompatActivity {
         forgotTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle forgot password click
+
                 Intent intent = new Intent(Login.this, Forgotp.class);
                 startActivity(intent);
 
@@ -68,7 +68,7 @@ public class Login extends AppCompatActivity {
         signupTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle sign up button click
+
                 Intent intent = new Intent(Login.this, signup.class);
                 startActivity(intent);
             }

@@ -37,10 +37,9 @@ public class alert1 extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle login button click
                 Intent intent = new Intent(alert1.this, Login.class);
                 startActivity(intent);
-                dialog.dismiss(); // Dismiss the dialog after login
+                dialog.dismiss();
             }
         });
 

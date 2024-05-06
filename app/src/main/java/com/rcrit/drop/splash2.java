@@ -11,13 +11,13 @@ public class splash2 extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash2);
 
-        // Using a Handler to delay the transition to Splashscreen2
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                // Start your next activity here
+
                 startActivity(new Intent(splash2.this, ob1.class));
-                // Close this activity
+
                 finish();
             }
         }, SPLASH_SCREEN_DELAY);

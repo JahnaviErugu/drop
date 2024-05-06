@@ -110,7 +110,7 @@
                 android:id="@+id/hist2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="60dp"
+                android:layout_marginLeft="30dp"
                 android:background="@drawable/histbutton"
                 android:paddingStart="20dp"
                 android:paddingTop="5dp"

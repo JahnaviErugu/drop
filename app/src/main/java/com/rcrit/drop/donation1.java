@@ -2,13 +2,17 @@ package com.rcrit.drop;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class donation1 extends AppCompatActivity {
 
@@ -27,7 +31,6 @@ public class donation1 extends AppCompatActivity {
     private TextView mNumberTextView;
     private Button mDonateButton;
     private ImageView mProfileImageView;
-    private CardView mCardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +40,6 @@ public class donation1 extends AppCompatActivity {
 
         mBackTextView.setOnClickListener(view -> startActivity(new Intent(this, homeadapter.class)));
 
-        // Set your desired text for the views
         mNameTextView.setText("Sophia");
         mTimeTextView.setText(getString(R.string.time));
         mLocationTextView.setText("Chennai");
@@ -51,17 +53,38 @@ public class donation1 extends AppCompatActivity {
         mContactTextView.setText(getString(R.string.contact));
         mNumberTextView.setText(getString(R.string.number));
 
-        // Set click listener for donate button
+
         mDonateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Show confirmation dialog before proceeding with donation
                 showConfirmationDialog();
             }
         });
 
-        // Set the image for the profile
         mProfileImageView.setImageResource(R.drawable.pro);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.drop) {
+                    // Code to perform on profile item click
+                    startActivity(new Intent(getApplicationContext(), Postedrequests.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                }if (item.getItemId() == R.id.home) {
+                    // Code to perform on home item click
+                    startActivity(new Intent(getApplicationContext(), homeadapter.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                }if (item.getItemId() == R.id.profile) {
+                    // Code to perform on message item click
+                    startActivity(new Intent(getApplicationContext(), profile.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
     private void initializeViews() {
@@ -80,31 +103,15 @@ public class donation1 extends AppCompatActivity {
         mNumberTextView = findViewById(R.id.number);
         mDonateButton = findViewById(R.id.bt);
         mProfileImageView = findViewById(R.id.prof);
-        mCardView = findViewById(R.id.cardView);
     }
 
     private void showConfirmationDialog() {
-        // Implement your custom confirmation dialog here
-        // For example:
-        // AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        // builder.setMessage("Are you sure you want to donate?");
-        // builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-        //     @Override
-        //     public void onClick(DialogInterface dialogInterface, int i) {
-        //         // Proceed with donation
-        //         donateBlood();
-        //     }
-        // });
-        // builder.setNegativeButton("No", null);
-        // builder.show();
 
-        // For simplicity, directly call donateBlood() without a confirmation dialog
         donateBlood();
     }
 
     private void donateBlood() {
-        // Add logic to handle the donation process
-        // For example, update UI to reflect donation status and navigate to donation2 activity
+
         Intent intent = new Intent(this, donation2.class);
         startActivity(intent);
     }

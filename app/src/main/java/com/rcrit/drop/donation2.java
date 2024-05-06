@@ -2,12 +2,16 @@ package com.rcrit.drop;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class donation2 extends AppCompatActivity {
 
@@ -22,6 +26,29 @@ public class donation2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.donate2);
         initializeViews();
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.home) {
+                    // Code to perform on home item click
+                    startActivity(new Intent(getApplicationContext(), homeadapter.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                } if (item.getItemId() == R.id.drop) {
+                    // Code to perform on profile item click
+                    startActivity(new Intent(getApplicationContext(), Postedrequests.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                } if (item.getItemId() == R.id.profile) {
+                    // Code to perform on message item click
+                    startActivity(new Intent(getApplicationContext(), profile.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                }
+                return false;
+            }
+        });
 
         mBackButton.setOnClickListener(view -> startActivity(new Intent(this, homeadapter.class)));
     }
@@ -46,8 +73,7 @@ public class donation2 extends AppCompatActivity {
     }
 
     private String generateDonationId() {
-        // Generate a random donation ID (for demonstration purposes)
-        // You can use a more sophisticated method to generate a unique ID
+
         return "DN" + (int) (Math.random() * 1000000);
     }
 

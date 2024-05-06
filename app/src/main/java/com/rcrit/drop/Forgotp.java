@@ -32,13 +32,10 @@ public class Forgotp extends AppCompatActivity {
                 String email = mEmailEditText.getText().toString().trim();
 
                 if (isValidEmail(email)) {
-                    // Valid email, proceed with verification
-                    // Add your verification logic here (e.g., send verification email)
 
-                    // For demonstration, navigate to alert1 activity on verification
                     startActivity(new Intent(Forgotp.this, alert1.class));
                 } else {
-                    // Invalid email, show error message
+
                     Toast.makeText(Forgotp.this, "Please enter a valid email address", Toast.LENGTH_SHORT).show();
                 }
             }

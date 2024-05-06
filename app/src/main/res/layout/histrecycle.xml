@@ -58,17 +58,17 @@
 
                     <TextView
                         android:id="@+id/address"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:paddingStart="-5dp"
                         android:drawableStart="@drawable/loc"
                         android:text="Rainy Hospital, Chennai"
                         android:textColor="#4B4B4B" />
 
                     <TextView
                         android:id="@+id/timeee"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="3dp"
                         android:drawableStart="@drawable/time"
                         android:text="  Posted on 2/3/2023"
                         android:textColor="#4B4B4B" />
@@ -82,7 +82,6 @@
                             android:id="@+id/unitt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="2dp"
                             android:drawableStart="@drawable/unit"
                             android:text="  Requested 2 units "
                             android:textColor="#4B4B4B" />

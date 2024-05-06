@@ -54,6 +54,7 @@
                                 android:scaleType="centerCrop" />
                         </androidx.cardview.widget.CardView>
                         <TextView
+                            android:id="@+id/name"
                             android:text="@string/name"
                             android:textColor="@color/black"
                             android:layout_marginTop="5dp"
@@ -175,7 +176,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="25dp"
                 android:text="@string/number"/>
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
+                android:background="@drawable/button"
                 android:id="@+id/bt"
                 android:layout_marginTop="60dp"
                 android:layout_gravity="center"
